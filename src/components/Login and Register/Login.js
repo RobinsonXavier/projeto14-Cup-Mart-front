@@ -25,7 +25,7 @@ export default function Login(){
 
     return(
         <Conteiner>
-            <div className="login">
+            <div className="areaForms">
                 <form onSubmit={loginValidation}>
                     <input type="email" value={email} placeholder="Email" required onChange={e => setEmail(e.target.value)}/>
 		            <input type="password" value={password} placeholder="Senha" required onChange={e => setPassword(e.target.value)}/>
