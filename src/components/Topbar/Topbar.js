@@ -53,6 +53,11 @@ export default function Topbar (){
                         </div>
                     </Link>
                     {/* <RenderNameUser/> */}
+                    <Link to={"/login"}>
+                        <div>
+                            <p>Fazer Login</p>
+                        </div>
+                    </Link>
                     <Link to ={"/cart"}>
                         <div>
                             <ion-icon name="cart-outline"></ion-icon>    
