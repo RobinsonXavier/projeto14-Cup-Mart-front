@@ -1,46 +1,47 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "./style.css"
+
 export default function Topbar (){
 
-    const { personData } = useContext(PersonContext)
-    const [userNotLoggedIn, setUserNotLoggedIn] = useState(true);
-    const [userName, setUserName] = useState("");
+    // const { personData } = useContext(PersonContext)
+    // const [userNotLoggedIn, setUserNotLoggedIn] = useState(true);
+    // const [userName, setUserName] = useState("");
 
-    useEffect(()=>{
-        async function userIsLoggedIn(){
-            try {
-                const requisition = await axios.get('http://localhost:4000/checkout', {
-                    headers: {
-                        "authorization": `Bearer ${personData.token}`
-                    }
-                });
-                setUserName(requisition.data.name)
-            } catch (error) {
-                setUserNotLoggedIn(!userNotLoggedIn)
-            }
-        }
-        userIsLoggedIn();
-    }, [])
+    // useEffect(()=>{
+    //     async function userIsLoggedIn(){
+    //         try {
+    //             const requisition = await axios.get('http://localhost:4000/checkout', {
+    //                 headers: {
+    //                     "authorization": `Bearer ${personData.token}`
+    //                 }
+    //             });
+    //             setUserName(requisition.data.name)
+    //         } catch (error) {
+    //             setUserNotLoggedIn(!userNotLoggedIn)
+    //         }
+    //     }
+    //     userIsLoggedIn();
+    // }, [])
 
-    function RenderNameUser(){
-        if(!userNotLoggedIn){
-            return(
-                <div>
-                    <Link to={"/login"}>
-                        <div>
-                            <p>Fazer Login</p>
-                        </div>
-                    </Link>
-                </div>
-            )
-        }
-        return(
-            <div>
-                <p>Olá, {userName}</p>
-            </div>
-        )
-    };
+    // function RenderNameUser(){
+    //     if(!userNotLoggedIn){
+    //         return(
+    //             <div>
+    //                 <Link to={"/login"}>
+    //                     <div>
+    //                         <p>Fazer Login</p>
+    //                     </div>
+    //                 </Link>
+    //             </div>
+    //         )
+    //     }
+    //     return(
+    //         <div>
+    //             <p>Olá, {userName}</p>
+    //         </div>
+    //     )
+    // };
 
 
     return(
@@ -51,7 +52,7 @@ export default function Topbar (){
                             <h1>W-Cup Store</h1>   
                         </div>
                     </Link>
-                    <RenderNameUser/>
+                    {/* <RenderNameUser/> */}
                     <Link to ={"/cart"}>
                         <div>
                             <ion-icon name="cart-outline"></ion-icon>    
