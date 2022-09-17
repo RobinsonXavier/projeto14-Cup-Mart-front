@@ -8,6 +8,8 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.4.0",
     "react-scripts": "^4.0.3",
+    "react-slideshow-image": "^4.0.5",
+    "react-slideview": "^0.1.3",
     "styled-components": "^5.3.5"
   },
   "scripts": {

@@ -24,7 +24,7 @@ width:100%;
 
 display:flex;
 flex-direction: column;
-align-items: center
+align-items: center;
 padding-top:10px;
 
 background-color:#84D904;
