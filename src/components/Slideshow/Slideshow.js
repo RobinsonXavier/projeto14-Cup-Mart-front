@@ -31,8 +31,13 @@ export default function Slideshow() {
 };
 
 const SliderGroup = styled.div `
+    box-sizing: border-box;
     width: 500px;
+    height: 101%;
     position: relative;
+    border: 5px solid #B3C8F2;
+    border-radius: 5px;
+    margin: 10px;
 `;
 
 const SlidePage = styled.div `
@@ -47,7 +52,7 @@ const SlidePage = styled.div `
 
     span {
         position: absolute;
-        color: #B3C8F2;
+        color: #ffffff;
         bottom: 10px;
         left: 5px;
         font-weight: 700;

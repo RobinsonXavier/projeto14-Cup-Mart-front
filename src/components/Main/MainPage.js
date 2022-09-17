@@ -4,23 +4,38 @@ import axios from "axios";
 import styled from "styled-components";
 
 import Slideshow from '../Slideshow/Slideshow';
+import MainContent from '../MainContent/MainContent';
+import Products from '../Products/Products';
 
 export default function MainPage (){
     return(
         <>
          <MainPageApp>
-            <Slideshow />
+            <TopMainPage>
+                <Slideshow />
+                <MainContent />
+            </TopMainPage>
+            <Products />
          </MainPageApp>
         </>
     )
 }
 
 const MainPageApp = styled.div `
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
     width: 85vw;
-    background-color: blue;
+    background-color: #ffffff;
+    border-right: 3px solid #6BB3F2;
+    border-left: 3px solid #6BB3F2;
 `;
 
-const slides = styled.div `
-
+const TopMainPage = styled.div `
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 335px;
 `;
