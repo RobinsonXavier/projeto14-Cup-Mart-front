@@ -1,12 +1,16 @@
 import styled from "styled-components"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link , useNavigate} from "react-router-dom";
 import "./style.css"
+import UserContext from "../../contexts/UserContext";
+import axios from "axios";
 
 export default function Login(){
 
     const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
+    const { setUser }  = useContext(UserContext)
 
     const navigate = useNavigate();
 
@@ -18,8 +22,18 @@ export default function Login(){
 			password: password
 		};
         
-        if (validation){
+        try {
+            
+            const requisition = await axios.post('http://localhost:4000/login', validation);
+
+            if(requisition.error){
+                return console.log(requisition.error.response.data)
+            }
+
+            setUser(requisition.data)
             navigate('/')
+        } catch (error) {
+            alert(error.response.data)
         }
     };
 

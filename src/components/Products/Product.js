@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 
-
 export default function Product () {
     const prodArray = [
         {
@@ -35,11 +34,13 @@ export default function Product () {
         <>
             <ProductPage>
                 {prodArray.map((produt, index) => {
-                    <div key={index}>
-                        <img src={produt.img} alt=''/>
-                        <span>{produt.price}</span>
-                    </div>
-                })}
+                    return(
+                        <div key={index}>
+                            <img src={produt.img} alt=''/>
+                            <span>{produt.price}</span>
+                        </div>
+                    )
+                })};
             </ProductPage>
         </>
     )
