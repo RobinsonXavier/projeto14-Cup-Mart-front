@@ -28,7 +28,7 @@ export default function App (){
         setTotal(total + price);
         setProductsSelected([...arr, prod]);
     }
-    console.log(productsSelected, total)
+    
     return(
         <UserContext.Provider value={{user, setUser}}>
             <ProductsSelectedContext.Provider value={{productsSelected, setProductsSelected}}>
