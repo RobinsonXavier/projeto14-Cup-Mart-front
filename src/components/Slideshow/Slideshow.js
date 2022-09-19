@@ -47,7 +47,6 @@ const SlidePage = styled.div `
         box-sizing: border-box;
         position: relative;
         max-width: 100%;
-        border-radius: 5px;
     }
 
     span {
