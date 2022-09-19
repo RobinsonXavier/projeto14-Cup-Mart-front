@@ -24,7 +24,7 @@ export default function ProductsPage (){
     }
 
     function goToProduct (id) {
-        navigate('/products');
+        navigate(`/products/${id}`);
     }
     return(
         <>
