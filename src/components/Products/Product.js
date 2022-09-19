@@ -28,6 +28,26 @@ export default function Product () {
             price: 'R$ 44,99',
             img: 'https://images-americanas.b2w.io/produtos/10510631/imagens/chapeu-bola-torcida-do-brasil-copa-do-mundo-qmm-005/10510626_1_large.jpg',
             
+        },
+        {
+            price: 'R$ 109,89',
+            img: 'https://static.netshoes.com.br/produtos/chuteira-campo-nike-phantom-gt-academy-df/08/HZM-3949-108/HZM-3949-108_zoom1.jpg?ts=1615299275',
+            
+        },
+        {
+            price: 'R$ 109,89',
+            img: 'https://static.netshoes.com.br/produtos/chuteira-campo-nike-phantom-gt-academy-df/08/HZM-3949-108/HZM-3949-108_zoom1.jpg?ts=1615299275',
+            
+        },
+        {
+            price: 'R$ 109,89',
+            img: 'https://static.netshoes.com.br/produtos/chuteira-campo-nike-phantom-gt-academy-df/08/HZM-3949-108/HZM-3949-108_zoom1.jpg?ts=1615299275',
+            
+        },
+        {
+            price: 'R$ 109,89',
+            img: 'https://static.netshoes.com.br/produtos/chuteira-campo-nike-phantom-gt-academy-df/08/HZM-3949-108/HZM-3949-108_zoom1.jpg?ts=1615299275',
+            
         }
     ];
     
@@ -35,10 +55,10 @@ export default function Product () {
         <>
             <ProductPage>
                 {prodArray.map((produt, index) => {
-                    <div key={index}>
-                        <img src={produt.img} alt=''/>
-                        <span>{produt.price}</span>
-                    </div>
+                    return <div key={index}>
+                                <img src={produt.img} alt=''/>
+                                <span>{produt.price}</span>
+                            </div>
                 })}
             </ProductPage>
         </>
@@ -47,7 +67,17 @@ export default function Product () {
 
 const ProductPage = styled.div `
     display: flex;
-    justify-content: center;
+    margin-left: 120px;
+
+    span {
+        margin-top: 10px;
+        margin-bottom: 25px;
+        font-size: 26px;
+        color: #ffffff;
+        -webkit-text-stroke: 0.5px #6BB3F2;
+        font-weight: 700;
+        text-decoration: none;
+    }
     
     & > div {
         display: flex;
@@ -55,6 +85,11 @@ const ProductPage = styled.div `
         align-items: center;
         justify-content: center;
         width: 120px;
+        margin: 10px;
+        padding-top: 20px;
+        border-left: 1px solid #6BB3F2;
+        border-right: 1px solid #6BB3F2;
+
         img {
             width: 100px;
             border-radius: 50%;

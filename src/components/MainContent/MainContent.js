@@ -32,7 +32,7 @@ const Content = styled.div `
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    height: 342px;
+    height: 338px;
     background-color: #B3C8F2;
     border-radius: 5px;  
     margin: 10px;

@@ -79,19 +79,30 @@ heigth: 40px;
 
 display:flex;
 flex-direction: column;
-align-items: center
+align-items: center;
 padding-top:10px;
 
 background-color:#84D904;
 
+
+
     div{
         height:40px;
         width: 100%;
-        max-width:800px;
+        max-width:1100px;
         display:flex;
         align-content: center;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
+
+        div {
+            color: #ffffff;
+
+            p{
+                font-size:18px;
+            }
+        }
     }
+
 
 `
