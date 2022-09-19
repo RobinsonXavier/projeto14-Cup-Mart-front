@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styled from "styled-components";
 import axios from 'axios';
 
-export default function ProductPage (){
+export default function ProductPage ({getProductsSelecteds}){
     const navigate = useNavigate();
     const {productId} = useParams();
     const [product, setProduct] = useState({});
@@ -36,7 +36,7 @@ export default function ProductPage (){
                         <span>{product.description}</span>
                     </div>
                     <div>
-                        <button>
+                        <button onClick={() => getProductsSelecteds(product)}>
                             Adicione ao carrinho
                             <ion-icon name="cart-outline"></ion-icon>    
                         </button>

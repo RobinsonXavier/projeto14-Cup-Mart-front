@@ -15,8 +15,20 @@ import ProductPage from './ProductsPage/ProductPage';
 
 export default function App (){
     const [user, setUser] = useState(null);
-    const [productsSelected, setProductsSelected] = useState(null);
+    const [productsSelected, setProductsSelected] = useState([]);
+    const [total, setTotal] = useState(0);
 
+    function getProductsSelecteds (prod) {
+        const arr = productsSelected;
+        const price = Number(prod.price.replace('R$ ', "").replace(",", "."));
+        const result = window.confirm("Deseja adicionar esse item no carrinho ?");
+        if(!result) {
+            return
+        }
+        setTotal(total + price);
+        setProductsSelected([...arr, prod]);
+    }
+    console.log(productsSelected, total)
     return(
         <UserContext.Provider value={{user, setUser}}>
             <ProductsSelectedContext.Provider value={{productsSelected, setProductsSelected}}>
@@ -27,7 +39,7 @@ export default function App (){
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/products" element={<ProductsPage/>}/>
-                        <Route path="/products/:productId" element={<ProductPage/>}/>
+                        <Route path="/products/:productId" element={<ProductPage getProductsSelecteds={getProductsSelecteds} />}/>
                         <Route path="/cart" element={<Cart/>}/>
                         <Route path="/checkout" element={<Checkout/>}/>
                     </Routes>
