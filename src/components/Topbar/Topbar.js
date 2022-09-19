@@ -7,45 +7,32 @@ import "./style.css"
 
 export default function Topbar (){
 
-     const { User } = useContext(UserContext)
+     const { user } = useContext(UserContext)
      const [userNotLoggedIn, setUserNotLoggedIn] = useState(true);
      const [userName, setUserName] = useState("");
 
      useEffect(()=>{
-         async function userIsLoggedIn(){
-             try {
-                 const requisition = await axios.get('http://localhost:4000/checkout', {
-                    headers: {
-                        "authorization": `Bearer ${User.token}`
-                    }
-                });
-                setUserName(requisition.data.name)
+        async function userIsLoggedIn(){
+
+            if (user){
+
+            try {
+                const requisition = await axios.get('http://localhost:4000/checkout', {
+                   headers: {
+                       "authorization": `Bearer ${user.token}`
+                   }
+               });
+               
+               setUserName(requisition.data.name)
+               setUserNotLoggedIn(false)
+               console.log(userName)
             } catch (error) {
-                setUserNotLoggedIn(!userNotLoggedIn)
-            }
+                setUserNotLoggedIn(true)
+            }};
         }
+
         userIsLoggedIn();
-    }, [])
-
-    function RenderNameUser(){
-        if(!userNotLoggedIn){
-            return(
-                <div>
-                    <Link to={"/login"}>
-                        <div>
-                            <p>Fazer Login</p>
-                        </div>
-                    </Link>
-                </div>
-            )
-        }
-        return(
-            <div>
-                <p>Olá, {userName}</p>
-            </div>
-        )
-    };
-
+    }, [user])
 
     return(
             <Conteiner> 
@@ -55,7 +42,20 @@ export default function Topbar (){
                             <h1>W-Cup Store</h1>   
                         </div>
                     </Link>
-                    <RenderNameUser/> 
+                    {userNotLoggedIn ? 
+                        <div>
+                            <Link to={"/login"}>
+                                <div>
+                                    <p>Fazer Login</p>
+                                </div>
+                            </Link>
+                        </div>
+                    :
+                        <div>
+                            <p>Olá, {userName}</p>
+                        </div>
+
+                    }
                     <Link to ={"/cart"}>
                         <div>
                             <ion-icon name="cart-outline"></ion-icon>    

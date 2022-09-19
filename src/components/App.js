@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import UserContext from '../contexts/UserContext';
-import ProductsSelectedContext from '../contexts/ProductsSelected';
+import ProductsSelectedContext from '../contexts/ProductsSelectedContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Topbar from "./Topbar/Topbar";
 import MainPage from "./Main/MainPage";
@@ -18,7 +18,7 @@ export default function App (){
     const [productsSelected, setProductsSelected] = useState(null);
 
     return(
-        <UserContext.Provider value={{user}}>
+        <UserContext.Provider value={{user, setUser}}>
             <ProductsSelectedContext.Provider value={{productsSelected, setProductsSelected}}>
                 <BrowserRouter>
                     <Topbar/>

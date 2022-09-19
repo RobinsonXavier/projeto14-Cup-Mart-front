@@ -29,11 +29,11 @@ export default function Login(){
             if(requisition.error){
                 return console.log(requisition.error.response.data)
             }
-
+            
             setUser(requisition.data)
             navigate('/')
         } catch (error) {
-            alert(error.response.data)
+            console.log(error)
         }
     };
 
