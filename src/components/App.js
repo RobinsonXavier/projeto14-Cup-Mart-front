@@ -7,6 +7,7 @@ import Login from "./Login and Register/Login";
 import Register from "./Login and Register/Register";
 import Cart from "./Cart/Cart";
 import Checkout from "./Checkout/Checkout"
+import ProductsPage from './ProductsPage/ProductsPage';
 
 
 
@@ -21,6 +22,7 @@ export default function App (){
                         <Route path="/" element={<MainPage/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
+                        <Route path="/products" element={<ProductsPage/>}/>
                         <Route path="/cart" element={<Cart/>}/>
                         <Route path="/checkout" element={<Checkout/>}/>
                     </Routes>

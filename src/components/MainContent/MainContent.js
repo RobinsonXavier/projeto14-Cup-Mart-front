@@ -68,7 +68,7 @@ const Shirts = styled.div `
     align-items: center;
     img {
         width: 200px;
-        border-radius: 50%;
+        border-radius: 25px;
         border: 2px solid #6BB3F2;
     }
 
