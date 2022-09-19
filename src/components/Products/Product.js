@@ -33,7 +33,7 @@ export default function Product () {
     }
 
     function goToProduct (id) {
-        navigate('/products');
+        navigate(`/products/${id}`);
     }
 
     const prodArray = [

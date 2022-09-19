@@ -29,18 +29,16 @@ export default function ProductsPage (){
     return(
         <>
          <ProductsMainPage>
-            <div>
-                {products.map((produt, index) => 
-                <div onClick={() => goToProduct(produt._id)} key={index}>
-                    <img src={produt.img} alt=''/>
-                        <div>  
-                            <h2>{produt.price}</h2>
-                            <span>{produt.name}</span>
+            {products.map((produt, index) => 
+            <div onClick={() => goToProduct(produt._id)} key={index}>
+                <img src={produt.img} alt=''/>
+                    <div>  
+                        <h2>{produt.price}</h2>
+                        <span>{produt.name}</span>
 
-                        </div>
+                    </div>
                                                     
-                </div>)}
-            </div>
+            </div>)}
             
          </ProductsMainPage>
         </>
@@ -49,22 +47,16 @@ export default function ProductsPage (){
 
 const ProductsMainPage = styled.div`
     display: flex;
-    margin-top: 45px;
-    padding-bottom: 25px;
+    flex-wrap: wrap;
+    margin-top: 75px;
+    margin-bottom: 15px;
+    border-radius: 5px;
     width: 85vw;
     background-color: #ffffff;
-    border-right: 3px solid #6BB3F2;
-    border-left: 3px solid #6BB3F2;
+    box-shadow: 0.5px 0.5px 4px rgba(128, 128, 128, 0.6);
 
-    & > div {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #B3C8F2;
-        border-radius: 5px;  
-        margin: 10px;
-        margin-bottom: -15px;
 
-        span {
+    span {
             margin-top: 10px;
             margin-bottom: 25px;
             font-size: px;
@@ -92,9 +84,6 @@ const ProductsMainPage = styled.div`
             width: 205px;
             margin: 10px;
             padding-top: 20px;
-            border-left: 1px solid #6BB3F2;
-            border-right: 1px solid #6BB3F2;
-            border-bottom: 1px solid #6BB3F2;
             border-radius: 5px;
 
             div {
@@ -106,10 +95,7 @@ const ProductsMainPage = styled.div`
             img {
                 width: 170px;
                 border-radius: 25px;
-                border: 1px solid #6BB3F2;
             }
-        }
-    }
 
     div {
         
