@@ -46,13 +46,13 @@ export default function Topbar (){
                         <div>
                             <Link to={"/login"}>
                                 <div>
-                                    <p>Fazer Login</p>
+                                    <h2>Fazer Login</h2>
                                 </div>
                             </Link>
                         </div>
                     :
                         <div>
-                            <p>Olá, {userName}</p>
+                            <h2>Olá, {userName}</h2>
                         </div>
 
                     }
@@ -73,12 +73,12 @@ top: 0;
 z-index: 2;
 
 width:100%;
-heigth: 40px;
+height: 60px;
 
 display:flex;
 flex-direction: column;
 align-items: center
-padding-top:10px;    
+padding-top:10px;   
 align-items: center;
 
 
@@ -92,6 +92,8 @@ background-color:#84D904;
         align-content: center;
         align-items: center;
         justify-content: space-evenly;
+        margin: auto
     }
+
 
 `
