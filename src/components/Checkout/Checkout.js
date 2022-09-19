@@ -11,7 +11,7 @@ export default function Checkout (){
     }, []);
 
     function getCheckoutData () {
-        const promise = axios.get(`http://localhost:4000/checkout`);
+        const promise = axios.get(`https://git.heroku.com/cup-market.git/checkout`);
 
         promise.catch((error) => console.log(error.promise));
 
@@ -26,7 +26,7 @@ export default function Checkout (){
                    
                 </div>
             </CheckoutPage>
-            </>
+        </>
     )
 }
 
@@ -43,5 +43,5 @@ const CheckoutPage = styled.div`
         justify-content: space-around;
         margin: 25px;
 
-
+    }
 `;

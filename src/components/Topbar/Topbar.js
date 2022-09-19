@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import UserContext from "../../contexts/UserContext";
 import axios from "axios";
-import "./style.css"
+import "./style.css";
 
 export default function Topbar (){
 
@@ -17,7 +17,7 @@ export default function Topbar (){
             if (user){
 
             try {
-                const requisition = await axios.get('http://localhost:4000/checkout', {
+                const requisition = await axios.get('https://git.heroku.com/cup-market.git/checkout', {
                    headers: {
                        "authorization": `Bearer ${user.token}`
                    }
@@ -77,14 +77,12 @@ heigth: 40px;
 
 display:flex;
 flex-direction: column;
-align-items: center
+align-items: center;
 padding-top:10px;    
 align-items: center;
-
-
 background-color:#84D904;
 
-    div{
+    div {
         height:40px;
         width: 100%;
         max-width:800px;

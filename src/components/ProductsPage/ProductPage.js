@@ -14,7 +14,7 @@ export default function ProductPage ({getProductsSelecteds}){
 
     function getProduct () {
 
-        const promise = axios.get(`http://localhost:4000/products/${productId}`);
+        const promise = axios.get(`https://git.heroku.com/cup-market.git/products/${productId}`);
 
         promise.catch ( error => console.log(error.message));
 

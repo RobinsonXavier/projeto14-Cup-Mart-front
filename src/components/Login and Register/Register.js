@@ -38,7 +38,7 @@ export default function Register () {
         }    
         try {
     
-            const requisition = await axios.post('http://localhost:4000/register', validation)
+            const requisition = await axios.post('https://git.heroku.com/cup-market.git/register', validation)
             if(requisition.error){
                 return console.log(requisition.error.response.data)
             }
