@@ -97,8 +97,6 @@ const ProductsMainPage = styled.div`
                 border-radius: 25px;
             }
 
-    div {
-        
-    }
+        }
 
 `;
