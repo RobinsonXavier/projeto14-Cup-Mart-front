@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import UserContext from '../contexts/UserContext';
+import ProductsSelectedContext from '../contexts/ProductsSelected';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Topbar from "./Topbar/Topbar";
 import MainPage from "./Main/MainPage";
@@ -13,11 +14,13 @@ import ProductPage from './ProductsPage/ProductPage';
 
 
 export default function App (){
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
+    const [productsSelected, setProductsSelected] = useState(null);
 
     return(
         <UserContext.Provider value={{user}}>
-            <BrowserRouter>
+            <ProductsSelectedContext.Provider value={{productsSelected, setProductsSelected}}>
+                <BrowserRouter>
                     <Topbar/>
                     <Routes>
                         <Route path="/" element={<MainPage/>}/>
@@ -28,7 +31,8 @@ export default function App (){
                         <Route path="/cart" element={<Cart/>}/>
                         <Route path="/checkout" element={<Checkout/>}/>
                     </Routes>
-            </BrowserRouter>
+                </BrowserRouter>
+            </ProductsSelectedContext.Provider>
         </UserContext.Provider>
     )
 }

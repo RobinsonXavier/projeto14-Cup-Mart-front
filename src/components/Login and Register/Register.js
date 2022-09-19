@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import { useState } from "react";
 import { Link , useNavigate} from "react-router-dom";
-import "./style.css"
+import "./style.css";
+import axios from "axios";
 
 export default function Register () {
 
@@ -34,10 +35,16 @@ export default function Register () {
             endress: endress,
             city: city,
             endressNumber: endressNumber
-        }
-
-        if (validation){
+        }    
+        try {
+    
+            const requisition = await axios.post('http://localhost:4000/register', validation)
+            if(requisition.error){
+                return console.log(requisition.error.response.data)
+            }
             navigate('/login')
+        } catch (error) {
+            alert(error.response.data)
         }
     }
 
@@ -57,7 +64,7 @@ export default function Register () {
                     <input type="password" placeholder="Confirme a Senha" required onChange={e => setConfirmPassword(e.target.value)}/>
                     <button type="submit">Cadastrar</button>
                 </form>
-                <Link to={'/'}>
+                <Link to={'/login'}>
                     <p>Já tem uma conta? Entre agora!</p>
                 </Link>
             </div>
