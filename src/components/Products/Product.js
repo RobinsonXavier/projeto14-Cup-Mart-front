@@ -88,7 +88,7 @@ export default function Product () {
         <>
             <ProductPage>
                 {products.map((produt, index) => {
-                    return <div onClick={() => goToProduct(produt._id)} key={index}>
+                    return  <div onClick={() => goToProduct(produt._id)} key={index}>
                                 <img src={produt.img} alt=''/>
                                 <span>{produt.price}</span>
                             </div>
