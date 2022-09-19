@@ -24,7 +24,6 @@ const MainPageProducts = styled.div `
     margin-bottom: -15px;
     overflow: hidden;
     overflow-x: scroll;
-    position: relative;
 
     ::-webkit-scrollbar {
         height: 5px;

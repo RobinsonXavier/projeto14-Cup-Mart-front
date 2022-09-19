@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from "axios";
 
 import styled from "styled-components";
 
@@ -19,7 +18,6 @@ export default function MainPage (){
                 <ProductSpan>Conheça nossos produtos.</ProductSpan>
                 <Products />
             </MainPageLayer2>
-
          </MainPageApp>
         </>
     )

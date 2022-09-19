@@ -1,8 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
+import axios from 'axios';
 
 
 export default function Product () {
+    const navigate = useNavigate();
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getProducts();
+    }, []);
+
+    function getProducts () {
+        
+        const promise = axios.get('http://localhost:4000/products');
+
+        promise.catch((error) => console.log(error.message));
+
+        promise.then( response => {
+            showSomeProducts(response)
+        })
+
+    }
+
+    function showSomeProducts (response) {
+        const arr= [];
+        for (let i = 0; i < 9; i++) {
+            arr.push(response.data[i])      
+        }
+        setProducts(arr)
+    }
+
+    function goToProduct (id) {
+        navigate('/products');
+    }
+
     const prodArray = [
         {
             price: 'R$ 109,89',
@@ -54,8 +87,8 @@ export default function Product () {
     return (
         <>
             <ProductPage>
-                {prodArray.map((produt, index) => {
-                    return <div key={index}>
+                {products.map((produt, index) => {
+                    return <div onClick={() => goToProduct(produt._id)} key={index}>
                                 <img src={produt.img} alt=''/>
                                 <span>{produt.price}</span>
                             </div>
@@ -92,7 +125,7 @@ const ProductPage = styled.div `
 
         img {
             width: 100px;
-            border-radius: 50%;
+            border-radius: 25px;
             border: 1px solid #6BB3F2;
         }
         
