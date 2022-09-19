@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import React,{ useContext } from "react";
 import styled from "styled-components";
 import ProductsSelectedContext from "../../contexts/ProductsSelectedContext";
 
@@ -22,7 +22,7 @@ export default function Cart (){
             <div key={index}>
                 <span className="product">{object.name}</span>
                 <span className="value">{object.price}</span>
-                <div className="button" onClick={removeProduct(index)}>
+                <div className="button" onClick={() => removeProduct(index)}>
                     <ion-icon name="trash-outline"></ion-icon>
                 </div>
             </div>
